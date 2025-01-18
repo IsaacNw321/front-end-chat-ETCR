@@ -38,6 +38,8 @@ export const Login = () => {
 
 
   return (
+    <div className="auth-container">
+      <h2>Iniciar Sesion</h2>
     <form onSubmit={handleSubmit(onSubmit)} className='auth-form'>
       {error ? <p>{error}</p> : null}
       <div className='form-field'>
@@ -52,5 +54,6 @@ export const Login = () => {
       </div>
       <button className='auth-button' type="submit">Iniciar Sesion</button>
     </form>
+    </div>
   );
 };
