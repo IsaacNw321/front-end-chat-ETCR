@@ -1,21 +1,34 @@
-import {  Link } from 'react-router-dom';
-import './Nav.css'
-function Navigation(){
-  return(
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Nav.css';
+
+function Navigation() {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
+  return (
     <nav className="nav-bar">
-      <ul className='nav-menu.active'>
-        <li className="nav-brand">
-          <Link to={'/'}>Inicio</Link>
+      <div className="nav-brand">
+        <Link to="/">Inicio</Link>
+      </div>
+      <button className="nav-toggle" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul className={`nav-menu ${menuActive ? 'active' : ''}`}>
+        <li>
+          <Link to="/profile">Perfil</Link>
         </li>
-        <li className="nav-brand">
-          <Link to={'/profile'}>Perfil</Link>
-        </li>
-        <li className="nav-brand">
-        <Link to={'/login'}>Iniciar Sesion</Link>
+        <li>
+          <Link to="/login">Iniciar Sesion</Link>
         </li>
       </ul>
     </nav>
-  ) 
+  );
 }
 
 export default Navigation;

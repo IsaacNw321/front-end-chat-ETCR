@@ -32,7 +32,7 @@ export default function LandingPage() {
       <img
         src={supportChat}
         alt="Ilustración de Chat de Apoyo"
-        width={400}
+        width={300}
         height={300}
         className="hero-img"
       />
