@@ -56,24 +56,6 @@ const Profile = () => {
             ))}
           </div>
         </section>
-        <section className='user-list'>
-          <strong>Chats</strong>
-           <ul>
-            {
-               chats.length === 0 || undefined ? <p>No hay chats aun</p> 
-               : (
-                chats.map(chat => {
-                  let chatWith = chat.users.filter(user => user.id !== userId)
-                  return(
-                    <li key={chat.id}>
-                      <strong>{chatWith[0].userName} </strong>
-                    </li>
-                  )
-                })
-               )
-            }
-           </ul>  
-        </section>
       </main>
       {user.role === "SUPERUSER" ? 
         <Link to={'/dashboard'}>Panel de control</Link>
