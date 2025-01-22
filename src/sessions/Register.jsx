@@ -12,7 +12,7 @@ export const Register = () => {
   const onSubmit = async (info) => {
     try {
       if (info) {
-        const {email, alias} = info
+        const { email, alias } = info;
         console.log(info)
         const users =  await getUsers()
         console.log(users);
